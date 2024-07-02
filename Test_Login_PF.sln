@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Login_PF", "Test_Login_PF\Test_Login_PF.csproj", "{DE052CB3-5AF8-4CBA-AB42-94DEC47A4473}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginSystem.API", "LoginSystem.API\LoginSystem.API.csproj", "{1E6B51E8-BA31-49DC-BDDE-A25BD90C6C95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{DE052CB3-5AF8-4CBA-AB42-94DEC47A4473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE052CB3-5AF8-4CBA-AB42-94DEC47A4473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE052CB3-5AF8-4CBA-AB42-94DEC47A4473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6B51E8-BA31-49DC-BDDE-A25BD90C6C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6B51E8-BA31-49DC-BDDE-A25BD90C6C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6B51E8-BA31-49DC-BDDE-A25BD90C6C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6B51E8-BA31-49DC-BDDE-A25BD90C6C95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
