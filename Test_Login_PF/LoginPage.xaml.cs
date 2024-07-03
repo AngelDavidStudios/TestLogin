@@ -4,9 +4,9 @@ namespace Test_Login_PF;
 
 public partial class LoginPage : ContentPage
 {
-    public LoginPage(LoginPageViewModel viewModel)
+    public LoginPage()
     {
         InitializeComponent();
-        BindingContext = viewModel;
+        BindingContext = new LoginPageViewModel();
     }
 }

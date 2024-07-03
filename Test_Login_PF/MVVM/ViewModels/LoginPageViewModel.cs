@@ -22,7 +22,8 @@ public partial class LoginPageViewModel: ObservableObject
     public async void Login()
     {
         try {
-            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet) {
+            if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet) {
+
                 if (!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password)) {
                     UserModel user = await loginService.Login(UserName, Password);
                     if (user == null) {
@@ -36,7 +37,7 @@ public partial class LoginPageViewModel: ObservableObject
                     Preferences.Set(nameof(App.User), userDetails);
                     App.User = user;
                     AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
-                    await Shell.Current.GoToAsync(nameof(HomePage));
+                    await Shell.Current.GoToAsync("//HomePage");
                 } else {
                     await Shell.Current.DisplayAlert("Error", "All fields required", "Ok");
                 }
