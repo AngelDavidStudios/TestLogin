@@ -2,8 +2,12 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Test_Login_PF.MVVM.Views.ContactPage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+             x:Class="Test_Login_PF.MVVM.Views.ContactPage"
+             Title="Contact Page">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to Contact Us"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
 </ContentPage>
