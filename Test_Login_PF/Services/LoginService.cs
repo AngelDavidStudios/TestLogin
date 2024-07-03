@@ -7,7 +7,7 @@ public class LoginService: ILoginService
 {
     public async Task<UserModel> Login(string email, string password)
     {
-        var client = new RestClient("https://localhost:7173/api/User/");
+        var client = new RestClient("https://localhost:5030/api/User/");
         var request = new RestRequest(email + "/" + password, Method.Get);
         var response = await client.ExecuteAsync<UserModel>(request);
         if (response.IsSuccessful)
