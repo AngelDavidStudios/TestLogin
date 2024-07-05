@@ -43,4 +43,34 @@ public class UserController: ControllerBase
         }
         return BadRequest("Invalid Request");
     }
+    
+    [HttpGet("{username}/{password}")]
+    public async Task<ActionResult<Users>> LoginWithUsername(string username, string password)
+    {
+        if (username is not null && password is not null)
+        {
+            var user = await appDbContext.Users
+                .Where(x => x.FullName!.ToLower().Equals(username.ToLower()) && x.Password == password)
+                .FirstOrDefaultAsync();
+            return user != null ? Ok(user) : NotFound("User not found");
+        }
+        return BadRequest("Invalid Request");
+    }
+    
+    [HttpDelete]
+    public async Task<ActionResult<Users>> DeleteById(int id)
+    {
+        if (id > 0)
+        {
+            var user = await appDbContext.Users.FindAsync(id);
+            if (user != null)
+            {
+                appDbContext.Users.Remove(user);
+                await appDbContext.SaveChangesAsync();
+                return Ok(user);
+            }
+            return NotFound("User not found");
+        }
+        return BadRequest("Invalid Request");
+    }
 }
