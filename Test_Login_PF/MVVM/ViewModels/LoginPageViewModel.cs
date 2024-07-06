@@ -48,4 +48,10 @@ public partial class LoginPageViewModel: ObservableObject
             await Shell.Current.DisplayAlert("Error", ex.Message, "Ok");
         }
     }
+    
+    [RelayCommand]
+    async Task ShowSignUpModal()
+    {
+        await Application.Current.MainPage.Navigation.PushModalAsync(new SignUpView());
+    }
 }

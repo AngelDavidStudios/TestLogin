@@ -16,4 +16,17 @@ public class LoginService: ILoginService
         }
         return null;
     }
+    
+    public async Task<UserModel> Register(string fullName, string email, string password)
+    {
+        var client = new RestClient("http://localhost:5030/api/User/");
+        var request = new RestRequest("",Method.Post);
+        request.AddJsonBody(new UserModel {FullName = fullName, Email = email, Password = password });
+        var response = await client.ExecuteAsync<UserModel>(request);
+        if (response.IsSuccessful)
+        {
+            return response.Data;
+        }
+        return null;
+    }
 }

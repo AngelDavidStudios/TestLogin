@@ -44,7 +44,7 @@ public class UserController: ControllerBase
         return BadRequest("Invalid Request");
     }
     
-    [HttpGet("{username}/{password}")]
+    [HttpGet("byUsername/{username}/{password}")]
     public async Task<ActionResult<Users>> LoginWithUsername(string username, string password)
     {
         if (username is not null && password is not null)
