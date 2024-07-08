@@ -6,8 +6,6 @@ namespace Test_Login_PF.MVVM.ViewModels;
 
 public partial class SignUpViewModel: ObservableObject
 {
-    private int Id { get; set; } = 0;
-    
     [ObservableProperty]
     private string fullName;
 
@@ -48,12 +46,14 @@ public partial class SignUpViewModel: ObservableObject
         if (success != null)
         {
             Message = "Registration successful.";
+            await Application.Current.MainPage.DisplayAlert("Success", "Usuario Registrado con exito.", "Ok");
             await Application.Current.MainPage.Navigation.PopModalAsync();
 
         }
         else
         {
             Message = "Registration failed.";
+            await Application.Current.MainPage.DisplayAlert("Error", "Error al registrar usuario.", "Ok");
         }
     }
     
